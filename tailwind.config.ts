@@ -18,9 +18,9 @@ export default {
           DEFAULT: '#FAF5EE',
           surface: '#F2EBE0',
           elevated: '#EDE4D6',
-          dark: '#1C0810',
-          'dark-surface': '#260D16',
-          'dark-elevated': '#30121C',
+          dark: '#000000',
+          'dark-surface': '#0D0D0D',
+          'dark-elevated': '#1A1A1A',
         },
         gold: {
           DEFAULT: '#C9A450',

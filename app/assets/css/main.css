@@ -5,8 +5,8 @@
 :root {
   --color-bg: #FAF5EE;
   --color-surface: #F2EBE0;
-  --color-bg-dark: #1C0810;
-  --color-bg-dark-surface: #260D16;
+  --color-bg-dark: #000000;
+  --color-bg-dark-surface: #0D0D0D;
   --color-gold: #C9A450;
   --color-crimson: #8B1F2A;
   --color-ink: #F2EBE0;
@@ -32,8 +32,8 @@ html {
 }
 
 body {
-  background-color: #FAF5EE;
-  color: #1A0D10;
+  background-color: #000000;
+  color: #F2EBE0;
   font-family: var(--font-sans);
   font-weight: 300;
   overflow-x: hidden;

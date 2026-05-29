@@ -18,15 +18,15 @@ const clients: Client[] = [
 </script>
 
 <template>
-  <section id="clients" class="relative bg-bg py-20 overflow-hidden">
+  <section id="clients" class="relative bg-bg-dark py-20 overflow-hidden">
 
     <!-- Top rule -->
-    <div class="w-full h-px bg-ink/8 mb-14" />
+    <div class="w-full h-px bg-ink-light/8 mb-14" />
 
     <!-- Section Label -->
     <div class="flex items-center justify-center mb-14">
       <div class="w-10 h-px bg-gold mr-6" />
-      <span class="text-sm tracking-[0.4em] uppercase font-sans font-light text-ink/50">
+      <span class="text-sm tracking-[0.4em] uppercase font-sans font-light text-ink-light/50">
         Our Partners
       </span>
       <div class="w-10 h-px bg-gold ml-6" />
@@ -36,9 +36,9 @@ const clients: Client[] = [
     <div class="relative flex overflow-hidden">
 
       <!-- Fade left edge -->
-      <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+      <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-dark to-transparent z-10 pointer-events-none" />
       <!-- Fade right edge -->
-      <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
+      <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-dark to-transparent z-10 pointer-events-none" />
 
       <!-- Scrolling strip — duplicated for seamless loop -->
       <div class="marquee-track flex items-center gap-16 whitespace-nowrap">
@@ -58,7 +58,7 @@ const clients: Client[] = [
           <!-- Text placeholder until real logos are provided -->
           <span
             v-else
-            class="font-display text-3xl font-light tracking-widest text-ink/25 hover:text-gold transition-colors duration-500 uppercase select-none"
+            class="font-display text-3xl font-light tracking-widest text-ink-light/25 hover:text-gold transition-colors duration-500 uppercase select-none"
           >
             {{ client.name }}
           </span>

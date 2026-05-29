@@ -148,13 +148,13 @@ onMounted(async () => {
             Upcoming Events
           </span>
         </div>
-        <span class="hidden md:block text-[10px] tracking-[0.2em] uppercase font-sans text-ink/25">
+        <span class="hidden md:block text-[10px] tracking-[0.2em] uppercase font-sans text-ink-light/25">
           2026 Season
         </span>
       </div>
 
       <!-- Cards Grid — left to right -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <div
           v-for="(event, index) in events"
           :key="event.id"
@@ -177,7 +177,7 @@ onMounted(async () => {
           </svg>
 
           <!-- Image -->
-          <div class="relative w-full aspect-[2/3] overflow-hidden bg-bg-elevated p-2">
+          <div class="relative w-full aspect-[2/3] overflow-hidden bg-bg-dark-elevated p-2">
 
             <!-- Real image -->
             <img
@@ -198,20 +198,20 @@ onMounted(async () => {
             </div>
 
             <!-- Dark overlay on hover -->
-            <div class="absolute inset-0 bg-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div class="absolute inset-0 bg-bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <!-- Sold Out badge -->
             <div
               v-if="event.isSoldOut"
-              class="absolute top-4 left-4 text-[9px] tracking-[0.25em] uppercase font-sans text-ink/60 bg-bg/80 px-3 py-1.5 backdrop-blur-sm"
+              class="absolute top-4 left-4 text-[9px] tracking-[0.25em] uppercase font-sans text-ink-light/60 bg-bg-dark/80 px-3 py-1.5 backdrop-blur-sm"
             >
               Sold Out
             </div>
 
             <!-- Date badge -->
-            <div class="absolute top-4 right-4 flex flex-col items-center bg-bg/80 backdrop-blur-sm px-3 py-2 min-w-[48px]">
+            <div class="absolute top-4 right-4 flex flex-col items-center bg-bg-dark/80 backdrop-blur-sm px-3 py-2 min-w-[48px]">
               <span class="font-display text-xl font-light text-gold leading-none">{{ event.date }}</span>
-              <span class="text-[9px] tracking-[0.2em] uppercase font-sans text-ink/50 mt-0.5">{{ event.month }}</span>
+              <span class="text-[9px] tracking-[0.2em] uppercase font-sans text-ink-light/50 mt-0.5">{{ event.month }}</span>
             </div>
 
           </div>
@@ -220,7 +220,7 @@ onMounted(async () => {
           <div class="flex flex-col flex-1 p-4 md:p-5">
 
             <!-- Artist Name -->
-            <h3 class="font-display text-xl md:text-2xl font-light text-ink group-hover:text-gold transition-colors duration-300 leading-tight mb-1.5">
+            <h3 class="font-display text-xl md:text-2xl font-light text-ink-light group-hover:text-gold transition-colors duration-300 leading-tight mb-1.5">
               {{ event.artist }}
             </h3>
 
@@ -231,11 +231,11 @@ onMounted(async () => {
 
             <!-- Location -->
             <div class="flex items-center gap-2 mb-4">
-              <span class="text-[10px] tracking-[0.15em] uppercase font-sans text-ink/35">
+              <span class="text-[10px] tracking-[0.15em] uppercase font-sans text-ink-light/35">
                 {{ event.city }}, {{ event.country }}
               </span>
-              <span class="text-ink/15">·</span>
-              <span class="text-[10px] tracking-[0.12em] font-sans text-ink/25">
+              <span class="text-ink-light/15">·</span>
+              <span class="text-[10px] tracking-[0.12em] font-sans text-ink-light/25">
                 {{ event.venue }}
               </span>
             </div>
@@ -244,7 +244,7 @@ onMounted(async () => {
             <div class="mt-auto">
               <span
                 v-if="event.isSoldOut"
-                class="inline-block text-[10px] tracking-[0.25em] uppercase font-sans text-ink/20 line-through"
+                class="inline-block text-[10px] tracking-[0.25em] uppercase font-sans text-ink-light/20 line-through"
               >
                 Sold Out
               </span>

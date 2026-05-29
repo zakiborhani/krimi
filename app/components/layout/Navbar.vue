@@ -6,30 +6,19 @@ const isScrolled = computed(() => y.value > 60)
 const isMenuOpen = ref(false)
 
 const navLinks = [
-  { label: 'Events', to: '#events' },
-  { label: 'Artists', to: '#artists' },
-  { label: 'About', to: '#about' },
-  { label: 'Contact', to: '#contact' },
+  { label: 'Events', to: '/#events' },
+  { label: 'Artists', to: '/artists' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 const isBtnHovered = ref(false)
 
 const ctaBtnStyle = computed(() => {
-  const hovered = isBtnHovered.value
-  const scrolled = isScrolled.value
-
-  if (hovered) {
-    return {
-      backgroundColor: scrolled ? '#C9A450' : '#ffffff',
-      color: '#1C0810',
-      borderColor: scrolled ? '#C9A450' : '#ffffff',
-    }
+  if (isBtnHovered.value) {
+    return { backgroundColor: '#C9A450', color: '#000000', borderColor: '#C9A450' }
   }
-  return {
-    backgroundColor: 'transparent',
-    color: scrolled ? '#C9A450' : '#ffffff',
-    borderColor: scrolled ? 'rgba(201,164,80,0.7)' : 'rgba(255,255,255,0.7)',
-  }
+  return { backgroundColor: 'transparent', color: '#C9A450', borderColor: 'rgba(201,164,80,0.7)' }
 })
 
 const toggleMenu = () => {
@@ -48,14 +37,7 @@ watch(isMenuOpen, (open) => {
 </script>
 
 <template>
-  <header
-    :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ease-expo-out',
-      isScrolled
-        ? 'bg-bg-dark/90 backdrop-blur-md border-b border-white'
-        : 'bg-transparent border-b border-white'
-    ]"
-  >
+  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-white/10">
     <div class="max-w-site mx-auto px-6 md:px-10 lg:px-16">
       <nav class="flex items-center justify-between py-4 md:py-5">
 
@@ -65,7 +47,7 @@ watch(isMenuOpen, (open) => {
           class="flex flex-col leading-none group"
           @click="closeMenu"
         >
-          <span :class="['font-display text-xl md:text-2xl font-light tracking-[0.15em] uppercase transition-colors duration-300', isScrolled ? 'text-ink-light' : 'text-ink']">
+          <span class="font-display text-xl md:text-2xl font-light tracking-[0.15em] uppercase text-ink-light">
             Karimi
           </span>
           <span class="text-[9px] tracking-[0.35em] text-gold uppercase font-sans font-light mt-0.5">
@@ -78,7 +60,7 @@ watch(isMenuOpen, (open) => {
           <li v-for="link in navLinks" :key="link.label">
             <a
               :href="link.to"
-              :class="['nav-link text-[11px] tracking-[0.2em] uppercase font-sans font-light transition-colors duration-300 ease-power2-out', isScrolled ? 'nav-link--dark text-ink-light/70 hover:text-ink-light' : 'nav-link--light text-ink/70 hover:text-ink']"
+              :class="['nav-link text-[11px] tracking-[0.2em] uppercase font-sans font-light transition-colors duration-300 ease-power2-out', 'nav-link--dark text-ink-light/70 hover:text-ink-light']"
             >
               {{ link.label }}
             </a>
@@ -88,7 +70,7 @@ watch(isMenuOpen, (open) => {
         <!-- Desktop CTA -->
         <div class="hidden md:flex items-center">
           <a
-            href="#events"
+            href="/#events"
             :style="ctaBtnStyle"
             class="cta-btn"
             @mouseenter="isBtnHovered = true"
@@ -107,21 +89,21 @@ watch(isMenuOpen, (open) => {
           <span
             :class="[
               'block h-px transition-all duration-400 ease-expo-out',
-              isScrolled || isMenuOpen ? 'bg-ink-light' : 'bg-ink',
+              'bg-ink-light',
               isMenuOpen ? 'w-6 rotate-45 translate-y-[10px]' : 'w-6'
             ]"
           />
           <span
             :class="[
               'block h-px transition-all duration-400 ease-expo-out',
-              isScrolled || isMenuOpen ? 'bg-ink-light' : 'bg-ink',
+              'bg-ink-light',
               isMenuOpen ? 'opacity-0 w-4' : 'w-4'
             ]"
           />
           <span
             :class="[
               'block h-px transition-all duration-400 ease-expo-out',
-              isScrolled || isMenuOpen ? 'bg-ink-light' : 'bg-ink',
+              'bg-ink-light',
               isMenuOpen ? 'w-6 -rotate-45 -translate-y-[10px]' : 'w-6'
             ]"
           />
@@ -141,7 +123,7 @@ watch(isMenuOpen, (open) => {
     >
       <div
         v-if="isMenuOpen"
-        class="md:hidden fixed inset-0 z-40 bg-bg flex flex-col justify-center px-10"
+        class="md:hidden fixed inset-0 z-40 bg-bg-dark flex flex-col justify-center px-10"
       >
         <!-- Mobile Links -->
         <ul class="flex flex-col gap-6 mb-12">
@@ -156,7 +138,7 @@ watch(isMenuOpen, (open) => {
           >
             <a
               :href="link.to"
-              class="font-display text-5xl font-light text-ink hover:text-gold transition-colors duration-300"
+              class="font-display text-5xl font-light text-ink-light hover:text-gold transition-colors duration-300"
               @click="closeMenu"
             >
               {{ link.label }}
@@ -166,7 +148,7 @@ watch(isMenuOpen, (open) => {
 
         <!-- Mobile CTA -->
         <a
-          href="#events"
+          href="/#events"
           class="inline-flex self-start text-[11px] tracking-[0.2em] uppercase font-sans font-light px-6 py-3 border border-gold/60 text-gold hover:bg-gold hover:text-bg transition-all duration-300"
           @click="closeMenu"
         >
@@ -174,7 +156,7 @@ watch(isMenuOpen, (open) => {
         </a>
 
         <!-- Mobile Footer Label -->
-        <p class="absolute bottom-8 left-10 text-[10px] tracking-[0.25em] uppercase text-ink/20 font-sans">
+        <p class="absolute bottom-8 left-10 text-[10px] tracking-[0.25em] uppercase text-ink-light/20 font-sans">
           Karimi Entertainment
         </p>
       </div>

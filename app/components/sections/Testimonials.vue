@@ -14,15 +14,15 @@ const testimonials: Testimonial[] = [
     id: '1',
     quote: 'An unforgettable evening. The atmosphere, the music, the energy — it felt like being transported back home while standing in the heart of Amsterdam.',
     author: 'Layla M.',
-    location: 'Amsterdam',
-    event: 'Googoosh Live 2025',
+    location: 'Stockholm',
+    event: 'Valy in Stockholm',
   },
   {
     id: '2',
     quote: 'Karimi Entertainment delivered a world-class production. Every detail was perfect — from the stage design to the sound quality. Truly a premium experience.',
     author: 'Reza K.',
-    location: 'Hamburg',
-    event: 'Ebi in Concert',
+    location: 'Stockholm',
+    event: 'Aryana in Stockholm',
   },
   {
     id: '3',
@@ -133,7 +133,7 @@ onMounted(async () => {
   <section
     id="testimonials"
     ref="sectionRef"
-    class="relative bg-bg py-section px-6 md:px-10 lg:px-16"
+    class="relative bg-bg-dark py-section px-6 md:px-10 lg:px-16"
   >
     <div class="max-w-site mx-auto">
 
@@ -146,7 +146,7 @@ onMounted(async () => {
           </span>
           <div class="w-8 h-px bg-gold" />
         </div>
-        <h2 class="font-display text-display-sm text-ink font-light">
+        <h2 class="font-display text-display-sm text-ink-light font-light">
           Voices from the Audience
         </h2>
       </div>
@@ -157,7 +157,7 @@ onMounted(async () => {
           v-for="(item, index) in testimonials"
           :key="item.id"
           :ref="(el) => setCardRef(el as HTMLElement, index)"
-          class="group relative flex flex-col bg-bg-surface p-8 md:p-10 hover:bg-bg-elevated transition-colors duration-500 overflow-hidden"
+          class="group relative flex flex-col bg-bg-dark-surface p-8 md:p-10 hover:bg-bg-dark-elevated transition-colors duration-500 overflow-hidden"
           @mousemove="onMouseMove($event, index)"
           @mouseleave="onMouseLeave(index)"
         >
@@ -174,7 +174,7 @@ onMounted(async () => {
           </span>
 
           <!-- Quote -->
-          <p class="font-display text-lg md:text-xl font-light italic text-ink/80 leading-relaxed flex-1 mb-8">
+          <p class="font-display text-lg md:text-xl font-light italic text-ink-light/80 leading-relaxed flex-1 mb-8">
             {{ item.quote }}
           </p>
 
@@ -183,10 +183,10 @@ onMounted(async () => {
 
           <!-- Author -->
           <div>
-            <p class="font-sans text-sm font-light text-ink tracking-wide">
+            <p class="font-sans text-sm font-light text-ink-light tracking-wide">
               {{ item.author }}
             </p>
-            <p class="text-[10px] tracking-[0.2em] uppercase font-sans text-ink/35 mt-1">
+            <p class="text-[10px] tracking-[0.2em] uppercase font-sans text-ink-light/35 mt-1">
               {{ item.event }} · {{ item.location }}
             </p>
           </div>
