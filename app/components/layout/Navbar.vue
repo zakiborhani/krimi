@@ -37,7 +37,7 @@ watch(isMenuOpen, (open) => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-white/10">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
     <div class="max-w-site mx-auto px-6 md:px-10 lg:px-16">
       <nav class="flex items-center justify-between py-4 md:py-5">
 
