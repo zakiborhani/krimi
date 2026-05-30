@@ -112,7 +112,10 @@ watch(isMenuOpen, (open) => {
       </nav>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+  </header>
+
+  <!-- Mobile Menu Overlay — teleported to body to escape backdrop-filter stacking context -->
+  <Teleport to="body">
     <Transition
       enter-active-class="transition-all duration-500 ease-expo-out"
       enter-from-class="opacity-0"
@@ -123,7 +126,7 @@ watch(isMenuOpen, (open) => {
     >
       <div
         v-if="isMenuOpen"
-        class="md:hidden fixed inset-0 z-40 bg-bg-dark flex flex-col justify-center px-10"
+        class="md:hidden fixed inset-0 z-[45] bg-bg-dark flex flex-col justify-center px-10"
       >
         <!-- Mobile Links -->
         <ul class="flex flex-col gap-6 mb-12">
@@ -161,7 +164,7 @@ watch(isMenuOpen, (open) => {
         </p>
       </div>
     </Transition>
-  </header>
+  </Teleport>
 </template>
 
 <style scoped>
