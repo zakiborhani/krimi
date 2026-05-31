@@ -57,7 +57,7 @@ const events: Event[] = [
     venue: 'The Biggest Afghan Concert Ever',
     image: '/images/stockholm-talinn.jpeg',
     isSoldOut: false,
-    ticketUrl: 'https://www.karimientertainment.com',
+    ticketUrl: 'https://www.tallink.com/sv/hitta-resa/kryssning/specialkryssningar/kabura-cruise',
   },
 ]
 
@@ -177,7 +177,7 @@ onMounted(async () => {
           </svg>
 
           <!-- Image -->
-          <div class="relative w-full aspect-[2/3] overflow-hidden bg-bg-dark-elevated p-2">
+          <div class="relative w-full aspect-[1/1] md:aspect-[4/5] overflow-hidden bg-bg-dark-elevated p-2">
 
             <!-- Real image -->
             <img
@@ -217,20 +217,20 @@ onMounted(async () => {
           </div>
 
           <!-- Card Body -->
-          <div class="flex flex-col flex-1 p-4 md:p-5">
+          <div class="flex flex-col flex-1 p-4">
 
             <!-- Artist Name -->
-            <h3 class="font-display text-xl md:text-2xl font-light text-ink-light group-hover:text-gold transition-colors duration-300 leading-tight mb-1.5">
+            <h3 class="font-display text-lg md:text-xl font-light text-ink-light group-hover:text-gold transition-colors duration-300 leading-tight mb-1">
               {{ event.artist }}
             </h3>
 
             <!-- Subtitle -->
-            <p v-if="event.subtitle" class="text-[10px] tracking-[0.18em] uppercase font-sans text-ink-light-muted/60 mb-2">
+            <p v-if="event.subtitle" class="text-[10px] tracking-[0.18em] uppercase font-sans text-ink-light-muted/60 mb-1.5">
               {{ event.subtitle }}
             </p>
 
             <!-- Location -->
-            <div class="flex items-center gap-2 mb-4">
+            <div class="flex items-center gap-2 mb-3">
               <span class="text-[10px] tracking-[0.15em] uppercase font-sans text-ink-light/35">
                 {{ event.city }}, {{ event.country }}
               </span>
