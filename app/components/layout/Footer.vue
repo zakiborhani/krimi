@@ -27,12 +27,13 @@ const socials = [
         <!-- Col 1 — Brand -->
         <div class="flex flex-col gap-5">
           <div>
-            <p class="font-display text-3xl md:text-4xl font-light tracking-[0.12em] text-ink-light uppercase leading-none">
-              Karimi
-            </p>
-            <p class="text-[9px] tracking-[0.4em] text-gold uppercase font-sans font-light mt-1">
-              Entertainment
-            </p>
+            <img
+              src="/images/karimi-logo-white.png"
+              alt="Karimi Entertainment"
+              class="h-14 md:h-16 w-auto select-none"
+              width="1007"
+              height="537"
+            >
           </div>
           <p class="text-sm font-sans font-light text-ink-light-muted leading-relaxed max-w-xs">
             Bringing the finest Afghan & Iranian artists to stages across Europe.

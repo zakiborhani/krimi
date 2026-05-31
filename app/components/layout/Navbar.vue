@@ -44,15 +44,17 @@ watch(isMenuOpen, (open) => {
         <!-- Logo -->
         <NuxtLink
           to="/"
-          class="flex flex-col leading-none group"
+          class="flex items-center leading-none group"
+          aria-label="Karimi Entertainment — home"
           @click="closeMenu"
         >
-          <span class="font-display text-xl md:text-2xl font-light tracking-[0.15em] uppercase text-ink-light">
-            Karimi
-          </span>
-          <span class="text-[9px] tracking-[0.35em] text-gold uppercase font-sans font-light mt-0.5">
-            Entertainment
-          </span>
+          <img
+            src="/images/karimi-logo-white.png"
+            alt="Karimi Entertainment"
+            class="h-9 md:h-11 w-auto select-none transition-opacity duration-300 ease-power2-out group-hover:opacity-80"
+            width="1007"
+            height="537"
+          >
         </NuxtLink>
 
         <!-- Desktop Nav -->
