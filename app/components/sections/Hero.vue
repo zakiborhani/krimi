@@ -28,9 +28,9 @@ onMounted(() => {
         ]"
       >
         <img
-          src="/images/hero.jpeg"
+          src="/images/hero1.jpeg"
           alt="Karimi Entertainment — Live Concerts in Europe"
-          class="w-full h-auto md:h-full md:object-cover md:object-top"
+          class="w-full h-auto md:h-full md:object-cover md:object-center"
           loading="eager"
           fetchpriority="high"
         />
